@@ -18,23 +18,23 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Avatar
-from v2ex.babel import Counter
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
+from v2yh.babel import Member
+from v2yh.babel import Avatar
+from v2yh.babel import Counter
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.handlers import BaseHandler
+from v2yh.babel.handlers import BaseHandler
 
 import config
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 class BlogHandler(BaseHandler):
     def get(self, member_username):

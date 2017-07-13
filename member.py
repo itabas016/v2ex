@@ -23,24 +23,24 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Avatar
-from v2ex.babel import Counter
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
-from v2ex.babel.ext.upyun import UpYun, md5, md5file
+from v2yh.babel import Member
+from v2yh.babel import Avatar
+from v2yh.babel import Counter
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
+from v2yh.babel.ext.upyun import UpYun, md5, md5file
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.handlers import BaseHandler
+from v2yh.babel.handlers import BaseHandler
 
 import config
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 class MemberHandler(webapp.RequestHandler):
     def get(self, member_username):
@@ -780,7 +780,7 @@ class SettingsAvatarHandler(webapp.RequestHandler):
                 # Sharding
                 timestamp = str(int(time.time()))
                 shard = member.num % 31
-                root = '/' + config.mobileme_username + '/Web/Sites/v2ex/avatars/' + str(shard)
+                root = '/' + config.mobileme_username + '/Web/Sites/v2yh/avatars/' + str(shard)
                 root_mini = root + '/mini'
                 root_normal = root + '/normal'
                 root_large = root + '/large'
@@ -789,17 +789,17 @@ class SettingsAvatarHandler(webapp.RequestHandler):
                 h.request('PUT', root_mini + '/' + str(member.num) + '.png', str(avatar_24), headers)
                 response = h.getresponse()
                 if response.status == 201 or response.status == 204:
-                    member.avatar_mini_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/avatars/' + str(shard) + '/mini/' + str(member.num) + '.png?r=' + timestamp
+                    member.avatar_mini_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/avatars/' + str(shard) + '/mini/' + str(member.num) + '.png?r=' + timestamp
                 # Normal
                 h.request('PUT', root_normal + '/' + str(member.num) + '.png', str(avatar_48), headers)
                 response = h.getresponse()
                 if response.status == 201 or response.status == 204:
-                    member.avatar_normal_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/avatars/' + str(shard) + '/normal/' + str(member.num) + '.png?r=' + timestamp
+                    member.avatar_normal_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/avatars/' + str(shard) + '/normal/' + str(member.num) + '.png?r=' + timestamp
                 # Large
                 h.request('PUT', root_large + '/' + str(member.num) + '.png', str(avatar_73), headers)
                 response = h.getresponse()
                 if response.status == 201 or response.status == 204:
-                    member.avatar_large_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/avatars/' + str(shard) + '/large/' + str(member.num) + '.png?r=' + timestamp
+                    member.avatar_large_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/avatars/' + str(shard) + '/large/' + str(member.num) + '.png?r=' + timestamp
                 member.put()
             # Upload to UpYun
             if config.upyun_enabled:

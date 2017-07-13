@@ -16,22 +16,22 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
-from v2ex.babel import Note
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
+from v2yh.babel import Note
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
 
 from twitter.oauthtwitter import OAuthApi
 from twitter.oauth import OAuthToken
@@ -39,7 +39,7 @@ from twitter.oauth import OAuthToken
 from config import twitter_consumer_key as CONSUMER_KEY
 from config import twitter_consumer_secret as CONSUMER_SECRET
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 class TwitterLinkHandler(webapp.RequestHandler):
     def get(self):
@@ -138,10 +138,10 @@ class TwitterCallbackHandler(webapp.RequestHandler):
                 self.redirect('/settings')
             else:
                 oauth_token = self.request.get('oauth_token')
-                if host == 'v2ex.appspot.com':
-                    self.redirect('http://www.v2ex.com/twitter/oauth?oauth_token=' + oauth_token)
+                if host == 'v2yh.appspot.com':
+                    self.redirect('http://www.v2yh.com/twitter/oauth?oauth_token=' + oauth_token)
                 else:
-                    self.redirect('http://v2ex.appspot.com/twitter/oauth?oauth_token=' + oauth_token)        
+                    self.redirect('http://v2yh.appspot.com/twitter/oauth?oauth_token=' + oauth_token)        
 
 class TwitterHomeHandler(webapp.RequestHandler):
     def get(self):

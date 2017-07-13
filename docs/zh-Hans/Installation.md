@@ -10,9 +10,9 @@ Project Babel 2 需要运行在 Google App Engine 的云计算环境中，因此
 
     +8613901012345
 
-通过手机验证之后，即可开始注册自己的 Application ID。Application ID 即网址中 .appspot.com 前面的那串字母及数字，比如在下面的例子中，Application ID 即是 v2ex：
+通过手机验证之后，即可开始注册自己的 Application ID。Application ID 即网址中 .appspot.com 前面的那串字母及数字，比如在下面的例子中，Application ID 即是 v2yh：
 
-    v2ex.appspot.com
+    v2yh.appspot.com
 
 ## 使用 git 获取最新源代码
 
@@ -22,7 +22,7 @@ Project Babel 2 需要运行在 Google App Engine 的云计算环境中，因此
     
 安装 git 之后，运行以下指令获得最新版本的 Project Babel 2 源代码：
 
-    git clone git://github.com/livid/v2ex.git v2ex
+    git clone git://github.com/livid/v2ex.git v2yh
     
 之后你需要将获得的那个目录更改为自己的 Application ID。然后将其中的 app.yaml.example 复制为 app.yaml，将其中的 application: 后面的字符串同样更改为自己的 Application ID。
 
@@ -42,4 +42,4 @@ Project Babel 2 需要运行在 Google App Engine 的云计算环境中，因此
 
 如果你在使用 Project Babel 2 的过程中遇到任何问题，欢迎到官方讨论区探讨：
 
-[http://v2ex.appspot.com/go/babel](http://v2ex.appspot.com/go/babel)
+[http://v2yh.appspot.com/go/babel](http://v2yh.appspot.com/go/babel)

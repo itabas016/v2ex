@@ -20,26 +20,26 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Avatar
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Site
-from v2ex.babel import Minisite
-from v2ex.babel import Page
+from v2yh.babel import Avatar
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Site
+from v2yh.babel import Minisite
+from v2yh.babel import Page
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.security import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
+from v2yh.babel.security import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
 
-from v2ex.babel.handlers import BaseHandler
+from v2yh.babel.handlers import BaseHandler
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 import config
 
@@ -1429,7 +1429,7 @@ class BackstageNodeAvatarHandler(BaseHandler):
                     # Sharding
                     timestamp = str(int(time.time()))
                     shard = node.num % 31
-                    root = '/' + config.mobileme_username + '/Web/Sites/v2ex/navatars/' + str(shard)
+                    root = '/' + config.mobileme_username + '/Web/Sites/v2yh/navatars/' + str(shard)
                     root_mini = root + '/mini'
                     root_normal = root + '/normal'
                     root_large = root + '/large'
@@ -1438,17 +1438,17 @@ class BackstageNodeAvatarHandler(BaseHandler):
                     h.request('PUT', root_mini + '/' + str(node.num) + '.png', str(avatar_24), headers)
                     response = h.getresponse()
                     if response.status == 201 or response.status == 204:
-                        node.avatar_mini_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/navatars/' + str(shard) + '/mini/' + str(node.num) + '.png?r=' + timestamp
+                        node.avatar_mini_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/navatars/' + str(shard) + '/mini/' + str(node.num) + '.png?r=' + timestamp
                     # Normal
                     h.request('PUT', root_normal + '/' + str(node.num) + '.png', str(avatar_48), headers)
                     response = h.getresponse()
                     if response.status == 201 or response.status == 204:
-                        node.avatar_normal_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/navatars/' + str(shard) + '/normal/' + str(node.num) + '.png?r=' + timestamp
+                        node.avatar_normal_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/navatars/' + str(shard) + '/normal/' + str(node.num) + '.png?r=' + timestamp
                     # Large
                     h.request('PUT', root_large + '/' + str(node.num) + '.png', str(avatar_73), headers)
                     response = h.getresponse()
                     if response.status == 201 or response.status == 204:
-                        node.avatar_large_url = 'http://web.me.com/' + config.mobileme_username + '/v2ex/navatars/' + str(shard) + '/large/' + str(node.num) + '.png?r=' + timestamp
+                        node.avatar_large_url = 'http://web.me.com/' + config.mobileme_username + '/v2yh/navatars/' + str(shard) + '/large/' + str(node.num) + '.png?r=' + timestamp
                     node.put()
                 memcache.set('Node_' + str(node.num), node, 86400 * 14)
                 memcache.set('Node::' + node.name, node, 86400 * 14)

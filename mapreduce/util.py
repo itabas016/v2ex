@@ -14,12 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
 
 """Utility functions for use with the mapreduce library."""
 

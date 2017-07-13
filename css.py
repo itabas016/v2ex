@@ -10,9 +10,9 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 class CSSHandler(webapp.RequestHandler):
     def get(self, theme):

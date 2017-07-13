@@ -1,4 +1,4 @@
-application: v2ex
+application: v2yh
 version: 1
 runtime: python
 api_version: 1
@@ -71,7 +71,7 @@ handlers:
 - url: /index.xml
   script: feed.py
   
-- url: /feed/v2ex.rss
+- url: /feed/v2yh.rss
   script: feed.py
 
 - url: /feed/(.+).xml

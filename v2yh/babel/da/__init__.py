@@ -9,14 +9,14 @@ import pickle
 from google.appengine.ext import db
 from google.appengine.api import memcache
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
-from v2ex.babel import Place
-from v2ex.babel import Site
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
+from v2yh.babel import Place
+from v2yh.babel import Site
 
 def GetKindByNum(kind, num):
     K = str(kind.capitalize())
@@ -134,8 +134,8 @@ def GetSite():
         else:
             site = Site()
             site.num = 1
-            site.title = 'V2EX'
-            site.domain = 'v2ex.appspot.com'
+            site.title = 'v2yh'
+            site.domain = 'v2yh.appspot.com'
             site.slogan = 'way to explore'
             site.l10n = 'en'
             site.description = ''

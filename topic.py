@@ -21,22 +21,22 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
-from v2ex.babel import Notification
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
+from v2yh.babel import Notification
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
 
 from django.utils import simplejson as json
 
@@ -46,7 +46,7 @@ from twitter.oauth import OAuthToken
 from config import twitter_consumer_key as CONSUMER_KEY
 from config import twitter_consumer_secret as CONSUMER_SECRET
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 import config
 
@@ -116,7 +116,7 @@ class NewTopicHandler(webapp.RequestHandler):
         ### BEGIN: CAN CONTINUE
         can_continue = True
         if ('Host' in self.request.headers):
-            if (self.request.headers['Host'] not in ['www.v2ex.com', 'v2ex.appspot.com', 'fast.v2ex.com', 'beta.v2ex.com', 'us.v2ex.com', 'jp.v2ex.com', 'eu.v2ex.com', 'localhost:10000']):
+            if (self.request.headers['Host'] not in ['www.v2yh.com', 'v2yh.appspot.com', 'fast.v2yh.com', 'beta.v2yh.com', 'us.v2yh.com', 'jp.v2yh.com', 'eu.v2yh.com', 'localhost:10000']):
                 can_continue = False
         else:
             can_continue = False
@@ -125,30 +125,30 @@ class NewTopicHandler(webapp.RequestHandler):
         if ('Cookie' not in self.request.headers):
             can_continue = False
         if ('Referer' in self.request.headers):
-            has_v2ex = False
+            has_v2yh = False
             if ('http://localhost:10000' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://www.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://v2ex.appspot.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('https://www.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://jp.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://eu.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://us.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('https://v2ex.appspot.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://fast.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://beta.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
+                has_v2yh = True
+            if ('http://www.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://v2yh.appspot.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('https://www.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://jp.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://eu.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://us.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('https://v2yh.appspot.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://fast.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://beta.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
             if ('http://' + str(site.domain) in self.request.headers['Referer']):
-                has_v2ex = True
-            if has_v2ex is False:
+                has_v2yh = True
+            if has_v2yh is False:
                 can_continue = False
         else:
             can_continue = False
@@ -562,7 +562,7 @@ class TopicHandler(webapp.RequestHandler):
         ### BEGIN: CAN CONTINUE
         can_continue = True
         if ('Host' in self.request.headers):
-            if (self.request.headers['Host'] not in ['www.v2ex.com', 'v2ex.appspot.com', 'fast.v2ex.com', 'beta.v2ex.com', 'us.v2ex.com', 'eu.v2ex.com', 'jp.v2ex.com', 'localhost:10000']):
+            if (self.request.headers['Host'] not in ['www.v2yh.com', 'v2yh.appspot.com', 'fast.v2yh.com', 'beta.v2yh.com', 'us.v2yh.com', 'eu.v2yh.com', 'jp.v2yh.com', 'localhost:10000']):
                 can_continue = False
         else:
             can_continue = False
@@ -571,30 +571,30 @@ class TopicHandler(webapp.RequestHandler):
         if ('Cookie' not in self.request.headers):
             can_continue = False
         if ('Referer' in self.request.headers):
-            has_v2ex = False
+            has_v2yh = False
             if ('http://localhost:10000' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://www.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://v2ex.appspot.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('https://www.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://eu.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://us.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://jp.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('https://v2ex.appspot.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://fast.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
-            if ('http://beta.v2ex.com' in self.request.headers['Referer']):
-                has_v2ex = True
+                has_v2yh = True
+            if ('http://www.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://v2yh.appspot.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('https://www.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://eu.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://us.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://jp.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('https://v2yh.appspot.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://fast.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
+            if ('http://beta.v2yh.com' in self.request.headers['Referer']):
+                has_v2yh = True
             if ('http://' + site.domain in self.request.headers['Referer']):
-                has_v2ex = True
-            if has_v2ex is False:
+                has_v2yh = True
+            if has_v2yh is False:
                 can_continue = False
         else:
             can_continue = False

@@ -10,7 +10,7 @@ from google.appengine.api import memcache
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 
-from v2ex.babel.ext.cookies import Cookies
+from v2yh.babel.ext.cookies import Cookies
 
 class BaseHandler(webapp.RequestHandler):
     @property
@@ -60,8 +60,8 @@ class BaseHandler(webapp.RequestHandler):
                 else:
                     site = Site()
                     site.num = 1
-                    site.title = 'V2EX'
-                    site.domain = 'v2ex.appspot.com'
+                    site.title = 'v2yh'
+                    site.domain = 'v2yh.appspot.com'
                     site.slogan = 'way to explore'
                     site.l10n = 'en'
                     site.description = ''
@@ -109,14 +109,14 @@ class BaseHandler(webapp.RequestHandler):
         if not hasattr(self, "_l10n"):
             if self.member is not False:
                 if self.member.l10n == 'en':
-                    from v2ex.babel.l10n.messages import en as messages
+                    from v2yh.babel.l10n.messages import en as messages
                 if self.member.l10n == 'zh-Hans':
-                    from v2ex.babel.l10n.messages import zhHans as messages
+                    from v2yh.babel.l10n.messages import zhHans as messages
             else:
                 if self.site.l10n == 'en':
-                    from v2ex.babel.l10n.messages import en as messages
+                    from v2yh.babel.l10n.messages import en as messages
                 if self.site.l10n == 'zh-Hans':
-                    from v2ex.babel.l10n.messages import zhHans as messages
+                    from v2yh.babel.l10n.messages import zhHans as messages
             self._l10n = messages
         return self._l10n
     

@@ -20,7 +20,7 @@
 __author__ = 'dewitt@google.com'
 __version__ = '0.6-devel'
 
-from v2ex import TWITTER_API_ROOT
+from v2yh import TWITTER_API_ROOT
 
 from django.utils import simplejson
 

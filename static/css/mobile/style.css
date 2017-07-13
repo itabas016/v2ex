@@ -1,7 +1,7 @@
 @charset "utf-8"
 
 /*
-	V2EX CSS (Mobile)
+	v2yh CSS (Mobile)
 	
 	Author: Livid <v2ex.livid@me.com>
 	Web: http://picky.olivida.com/
@@ -161,7 +161,7 @@ h1 {
 }
 
 #iAd {
-	background-image: url("http://static.v2ex.com/iads/strangers_v2ex_mobile.png");
+	background-image: url("http://static.v2yh.com/iads/strangers_v2yh_mobile.png");
 	height: 50px;
 }
 
@@ -477,7 +477,7 @@ input.btn {
 	}
 	
 	#iAd {
-		background-image: url("http://static.v2ex.com/iads/strangers_v2ex_mobile@2x.png");
+		background-image: url("http://static.v2yh.com/iads/strangers_v2yh_mobile@2x.png");
 		background-size: 320px 50px;
 	}
 }

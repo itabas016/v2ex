@@ -1,6 +1,6 @@
 import re, string
 import logging
-from v2ex.babel.ext import bleach
+from v2yh.babel.ext import bleach
 
 from django import template
 
@@ -165,7 +165,7 @@ register.filter(mentions)
 
 # gravatar filter
 def gravatar(value,arg):
-    default = "http://v2ex.appspot.com/static/img/avatar_" + str(arg) + ".png"
+    default = "http://v2yh.appspot.com/static/img/avatar_" + str(arg) + ".png"
     if type(value).__name__ != 'Member':
         return '<img src="' + default + '" border="0" align="absmiddle" />'
     if arg == 'large':

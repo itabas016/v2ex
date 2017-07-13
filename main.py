@@ -22,30 +22,30 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
-from v2ex.babel import PasswordResetToken
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
+from v2yh.babel import PasswordResetToken
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
-from v2ex.babel.l10n import *
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
+from v2yh.babel.l10n import *
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
 
-from v2ex.babel.handlers import BaseHandler
+from v2yh.babel.handlers import BaseHandler
 
 from django.utils import simplejson as json
 
-from v2ex.babel.ext import captcha
+from v2yh.babel.ext import captcha
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 import config
 
@@ -55,8 +55,8 @@ class HomeHandler(webapp.RequestHandler):
         
     def get(self):
         host = self.request.headers['Host']
-        if host == 'beta.v2ex.com':
-            return self.redirect('http://www.v2ex.com/')
+        if host == 'beta.v2yh.com':
+            return self.redirect('http://www.v2yh.com/')
         site = GetSite()
         browser = detect(self.request)
         template_values = {}
@@ -403,7 +403,7 @@ class SignupHandler(webapp.RequestHandler):
         member_username = self.request.get('username').strip()
         # Special cases
         if 'vpn' in member_username:
-            return self.redirect('http://www.v2ex.com/')
+            return self.redirect('http://www.v2yh.com/')
         if (len(member_username) == 0):
             errors = errors + 1
             member_username_error = 1
@@ -622,7 +622,7 @@ class ForgotHandler(webapp.RequestHandler):
                 mail_template_values['ip'] = self.request.remote_addr
                 path = os.path.join(os.path.dirname(__file__), 'tpl', 'mail', 'reset_password.txt')
                 output = template.render(path, mail_template_values)
-                result = mail.send_mail(sender="v2ex.livid@me.com",
+                result = mail.send_mail(sender="itabas016@gmail.com",
                               to=one.email,
                               subject="=?UTF-8?B?" + base64.b64encode((u"[" + site.title + u"] 重新设置密码").encode('utf-8')) + "?=",
                               body=output)

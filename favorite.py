@@ -16,25 +16,25 @@ from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 from google.appengine.api.labs import taskqueue
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
-from v2ex.babel import Note
-from v2ex.babel import NodeBookmark
-from v2ex.babel import TopicBookmark
-from v2ex.babel import MemberBookmark
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
+from v2yh.babel import Note
+from v2yh.babel import NodeBookmark
+from v2yh.babel import TopicBookmark
+from v2yh.babel import MemberBookmark
 
-from v2ex.babel import SYSTEM_VERSION
+from v2yh.babel import SYSTEM_VERSION
 
-from v2ex.babel.security import *
-from v2ex.babel.ua import *
-from v2ex.babel.da import *
+from v2yh.babel.security import *
+from v2yh.babel.ua import *
+from v2yh.babel.da import *
 
-from v2ex.babel.ext.cookies import Cookies
-from v2ex.babel.ext.sessions import Session
+from v2yh.babel.ext.cookies import Cookies
+from v2yh.babel.ext.sessions import Session
 
 class FavoriteNodeHandler(webapp.RequestHandler):
     def get(self, node_name):

@@ -4,7 +4,7 @@
 import logging
 import re
 
-from v2ex.babel import Member
+from v2yh.babel import Member
 
 from google.appengine.ext import db
 from google.appengine.ext import webapp

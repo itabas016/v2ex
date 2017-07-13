@@ -6,10 +6,10 @@ from google.appengine.api import memcache
 from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 
-from v2ex.babel import Avatar
+from v2yh.babel import Avatar
 
-from v2ex.babel.security import *
-from v2ex.babel.da import *
+from v2yh.babel.security import *
+from v2yh.babel.da import *
         
 class AvatarHandler(webapp.RequestHandler):
     def get(self, member_num, size):

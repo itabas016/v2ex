@@ -6,9 +6,9 @@ import re
 import hashlib
 import urllib
 
-from v2ex.babel import Member
+from v2yh.babel import Member
 
-from v2ex.babel.da import *
+from v2yh.babel.da import *
 
 from google.appengine.ext import db
 from google.appengine.ext import webapp

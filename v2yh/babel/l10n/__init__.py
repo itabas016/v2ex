@@ -13,17 +13,17 @@ import logging
 def GetMessages(handler, member=False, site=False):
     if member is not False:
         if member.l10n == 'en':
-            from v2ex.babel.l10n.messages import en as messages
+            from v2yh.babel.l10n.messages import en as messages
             return messages
         if member.l10n == 'zh-Hans':
-            from v2ex.babel.l10n.messages import zhHans as messages
+            from v2yh.babel.l10n.messages import zhHans as messages
             return messages
     else:
         if site.l10n == 'en':
-            from v2ex.babel.l10n.messages import en as messages
+            from v2yh.babel.l10n.messages import en as messages
             return messages
         if site.l10n == 'zh-Hans':
-            from v2ex.babel.l10n.messages import zhHans as messages
+            from v2yh.babel.l10n.messages import zhHans as messages
             return messages
 
 def GetSupportedLanguages():

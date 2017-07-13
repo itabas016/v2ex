@@ -26,25 +26,25 @@
                     <table cellpadding="5" cellspacing="0" border="0" width="100%">
                         {% if one.location %}
                         <tr>
-                            <td width="16" valign="middle"><img src="http://v2ex.com/static/img/location.png" border="0" /></td>
+                            <td width="16" valign="middle"><img src="http://v2yh.com/static/img/location.png" border="0" /></td>
                             <td><a href="http://www.google.com/maps?q={{ one.location|escape }}" target="_blank">{{ one.location|escape }}</a></td>
                         </tr>
                         {% endif %}
                         {% if one.website %}
                         <tr>
-                            <td width="16" valign="middle"><img src="http://v2ex.com/static/img/mobileme.png" border="0" /></td>
+                            <td width="16" valign="middle"><img src="http://v2yh.com/static/img/mobileme.png" border="0" /></td>
                             <td><a href="{{ one.website|escape }}" target="_blank">{{ one.website|escape }}</a></td>
                         </tr>
                         {% endif %}
                         {% if one.twitter %}
                         <tr>
-                            <td width="16" valign="middle"><img src="http://v2ex.com/static/img/twitter.png" border="0" /></td>
+                            <td width="16" valign="middle"><img src="http://v2yh.com/static/img/twitter.png" border="0" /></td>
                             <td>@<a href="https://twitter.com/{{ one.twitter|escape }}" target="_blank">{{ one.twitter|escape }}</a></td>
                         </tr>
                         {% endif %}
                         {% if one.psn %}
                         <tr>
-                            <td width="16" valign="middle"><img src="http://v2ex.com/static/img/psn.png" border="0" /></td>
+                            <td width="16" valign="middle"><img src="http://v2yh.com/static/img/psn.png" border="0" /></td>
                             <td><a href="http://us.playstation.com/publictrophy/index.htm?onlinename={{ one.psn|escape }}" target="_blank">{{ one.psn|escape }}</a></td>
                         </tr>
                         {% endif %}

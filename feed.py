@@ -10,18 +10,18 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-from v2ex.babel import Member
-from v2ex.babel import Counter
-from v2ex.babel import Section
-from v2ex.babel import Node
-from v2ex.babel import Topic
-from v2ex.babel import Reply
+from v2yh.babel import Member
+from v2yh.babel import Counter
+from v2yh.babel import Section
+from v2yh.babel import Node
+from v2yh.babel import Topic
+from v2yh.babel import Reply
 
-from v2ex.babel.da import *
+from v2yh.babel.da import *
 
-from v2ex.babel.handlers import BaseHandler
+from v2yh.babel.handlers import BaseHandler
 
-template.register_template_library('v2ex.templatetags.filters')
+template.register_template_library('v2yh.templatetags.filters')
 
 class FeedHomeHandler(BaseHandler):
     def head(self):
@@ -118,7 +118,7 @@ def main():
     application = webapp.WSGIApplication([
     ('/index.xml', FeedHomeHandler),
     ('/read.xml', FeedReadHandler),
-    ('/feed/v2ex.rss', FeedHomeHandler),
+    ('/feed/v2yh.rss', FeedHomeHandler),
     ('/feed/([0-9a-zA-Z\-\_]+).xml', FeedNodeHandler)
     ],
                                          debug=True)

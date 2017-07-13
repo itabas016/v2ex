@@ -7,7 +7,7 @@ import logging
 from google.appengine.ext import db
 from google.appengine.api import memcache
 
-from v2ex.babel.ext.cookies import Cookies
+from v2yh.babel.ext.cookies import Cookies
 
 def CheckAuth(handler):
     ip = GetIP(handler)
